@@ -1,0 +1,27 @@
+.sidebar img {
+    border-radius: 30px;
+}
+
+
+.friendsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+
+}
+
+.friendsList img {
+    border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

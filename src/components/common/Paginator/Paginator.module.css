@@ -1,0 +1,12 @@
+.paginator {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.selectedPage {
+    font-weight: bold;
+}
+.pageNumber {
+    padding: 2px;
+    border: 1px solid darkblue;
+
+}
