@@ -9,7 +9,7 @@ let User = (props) => {
                 <span>
                     <div>
                         <NavLink to={'./profile/' + props.user.id}>
-                        <img src={props.user.photos.small != null ? props.user.photos.small : userPhoto} className={s.userPhoto}/>
+                            <img src={props.user.photos.small != null ? props.user.photos.small : userPhoto} className={s.userPhoto}/>
                         </NavLink>
                     </div>
                     <div>
