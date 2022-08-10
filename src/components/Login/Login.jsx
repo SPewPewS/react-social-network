@@ -4,13 +4,18 @@ import React from "react";
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import loginFormSchema from "../FormValidation/LoginFormSchema";
 import {connect} from "react-redux";
-import {loginTC, logoutTC} from "../../redux/auth-reducer";
+import {getCaptchaUrl, loginTC, logoutTC} from "../../redux/auth-reducer";
 import {Navigate, Redirect} from "react-router";
 import {mapStateToPropsFactory} from "react-redux/es/connect/mapStateToProps";
+import {ReCAPTCHA} from "react-google-recaptcha";
 
 const Login = (props) => {
+
+    function onChange(value) {
+        console.log("Captcha value:", value);
+    }
     const onSubmit = (formData, {setFieldValue}) => {
-        props.loginTC(formData.email, formData.password, formData.rememberMe, setFieldValue)
+        props.loginTC(formData.email, formData.password, formData.rememberMe,formData.captcha, setFieldValue)
 
     }
 
@@ -25,7 +30,9 @@ const Login = (props) => {
         <Formik initialValues={{
             email: "",
             password: "",
-            rememberMe: false
+            rememberMe: false,
+            captcha: ""
+
         }}
                 validateOnBlur
                 onSubmit={onSubmit}
@@ -71,11 +78,12 @@ const Login = (props) => {
                         <Field type="checkbox" name={'rememberMe'} />
                         <label htmlFor={'rememberMe'}> remember me </label>
                     </div>
+                    {props.captchaUrl && <img src={props.captchaUrl} />}
+                    {props.captchaUrl && <Field type="text" name={"captcha"} />}
                     <div>{values.general ? <span>{values.general}</span>: null}</div>
                     <button type={'submit'} >Log in</button>
                 </Form>
             )}
-
 
         </Formik>
         {/*  <Formik
@@ -126,7 +134,8 @@ const Login = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 })
 
 export default connect(mapStateToProps, {loginTC}) (Login);
