@@ -12,11 +12,21 @@ import FormTest from "./components/Test/FormTest/FormTest";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
 
+    catchAllUnhandledErrors = (promiseRejectionEvent) => {
+        alert("Some error");
+        console.error(promiseRejectionEvent)
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection",  this.catchAllUnhandledErrors)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection",  this.catchAllUnhandledErrors)
     }
 
     render() {
@@ -29,25 +39,32 @@ class App extends React.Component {
                 <div>
                     <HeaderContainer/>
                     <div className='container '>
-                        <div className='app-wrapper container'>
+                        <div className='app-wrapper'>
                             <NavbarContainer store={this.props.store}/>
 
                             <div className='app-wrapper-content'>
                                 <Routes>
+
                                     <Route path='/dialogs/*' element={<DialogsContainer store={this.props.store}/>}/>
                                     <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                                     <Route path="/profile/" element={<ProfileContainer/>}/>
                                     <Route path='/users' element={<UsersContainer/>}/>
                                     <Route path='/login' element={<Login/>}/>
                                     <Route path='/formTest' element={<FormTest/>}/>
+                                    <Route path='*' element={<div>404 NOT FOUND</div>}/>
+                                    <Route path='/' element={<ProfileContainer/>}/>
 
                                 </Routes>
+
                             </div>
 
 
+                            {/*<Footer />*/}
                         </div>
 
                     </div>
+
+
                 </div>
 
         )

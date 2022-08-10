@@ -2,11 +2,15 @@
     width: 1200px;
 
   }
-  
+
+.colorWhite {
+  color: white;
+}
+
   header {
     display: flex;
     justify-content: center;
-    background: #6e78b7;
+    background: rgb(249, 213, 73);
   }
   
   .header img {

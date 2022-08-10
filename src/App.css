@@ -1,7 +1,9 @@
 .container {
     display: flex;
     justify-content: center;
-    background: #deeafb;
+    background: rgb(249, 213, 73);
+    height: 900px;
+    height: 120vh;
 }
 
 
@@ -17,13 +19,12 @@
   "n c"
   "s s";
 
-    grid-template-rows: 1fr 1fr; /* сколько строк их высота */
+    grid-template-rows: 1fr; /* сколько строк их высота */
     grid-template-columns: 2fr 10fr ; /* 2 столбца и их ширина */
 }
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: #deeafb;
-    border: 1px solid #d9f1ff;
+    background-color: rgb(249, 213, 73);
 
 }

@@ -1,6 +1,6 @@
 .nav {
-  grid-area: n;
-  background-color: #deeafb;
+
+  background-color: rgb(249, 213, 73);
 }
 
 .nav a{
@@ -9,7 +9,7 @@
 }
 
 a.activeLink {
-  color: gold;
+  color: white;
 }
 
 .friendsList {

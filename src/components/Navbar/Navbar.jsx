@@ -18,19 +18,7 @@ const Navbar = (props) => {
                 <NavLink to='/dialogs' style={({isActive}) => ({color: isActive ? 'white' : '' })}>Dialogs</NavLink>
             </div>
             <div>
-                <NavLink to='/users'>Users</NavLink>
-            </div>
-            <div>
-                <NavLink to='/new'>News</NavLink>
-            </div>
-            <div>
-                <NavLink to='/music'>Music</NavLink>
-            </div>
-            <div>
-                <NavLink to='/settings'>Settings</NavLink>
-            </div>
-            <div>
-                <NavLink to='/setting'>Settings</NavLink>
+                <NavLink to='/users' className={({isActive}) => isActive ? s.activeLink : ''}>Users</NavLink>
             </div>
 
             <div>
