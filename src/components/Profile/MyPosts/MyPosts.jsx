@@ -4,6 +4,7 @@ import s from './MyPosts.module.css'
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {Textarea} from "../../common/FormsControls/FormsControls";
 import TextAFormSchema from "../../FormValidation/TextAFormSchema";
+import MyButton from "../../common/Button/MyButton";
 
 
 const MyPosts = (props) => {
@@ -60,7 +61,7 @@ const AddNewPostForm = (props) => {
                             placeholder={"enter text"}
                         />
                         <br/>
-                        <button type={'submit'}>Send</button>
+                        <MyButton type={'submit'}>Send</MyButton>
                     </Form>
 
                 </div>

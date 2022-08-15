@@ -3,6 +3,7 @@ import s from './Navbar.module.css'
 import {Link, NavLink} from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import Message from "../Dialogs/Message/Message";
+import MyButton from "../common/Button/MyButton";
 
 
 const Navbar = (props) => {

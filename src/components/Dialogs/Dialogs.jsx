@@ -6,6 +6,7 @@ import {addMessageActionCreator, updateNewMessageCreator} from "../../redux/mess
 import {Navigate} from "react-router";
 import {Field, Form, Formik} from "formik";
 import {Textarea} from "../common/FormsControls/FormsControls";
+import MyButton from "../common/Button/MyButton";
 
 
 const Dialogs = (props) => {
@@ -74,7 +75,7 @@ const AddMassageForm = (props) => {
                         />
                     </div>
 
-                    <button type={'submit'}>Send</button>
+                    <MyButton type={'submit'}>Send</MyButton>
                 </Form>
             )}
         </Formik>

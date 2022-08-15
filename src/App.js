@@ -36,11 +36,12 @@ class App extends React.Component {
 
         return (
 
-                <div>
+                <div >
                     <HeaderContainer/>
                     <div className='container '>
                         <div className='app-wrapper'>
                             <NavbarContainer store={this.props.store}/>
+
 
                             <div className='app-wrapper-content'>
                                 <Routes>

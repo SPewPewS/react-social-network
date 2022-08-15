@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWitchH from "./ProfileStatusWitchH";
 import ProfileDataForm from "./ProfileDataForm";
+import MyButton from "../../common/Button/MyButton";
 
 const ProfileInfo = (props) => {
 
@@ -54,7 +55,7 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
 
     return <div>
         {isOwner && <div>
-            <button onClick={goToEditMode}>edit</button>
+            <MyButton onClick={goToEditMode}>edit</MyButton>
         </div>}
         <div>
             <b>Full name</b>: {profile.fullName}

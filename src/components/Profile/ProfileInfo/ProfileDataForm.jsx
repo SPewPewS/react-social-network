@@ -2,6 +2,7 @@ import React from "react";
 import {Field, Form, Formik} from "formik";
 import s from './ProfileInfo.module.css'
 import {Textarea} from "../../common/FormsControls/FormsControls";
+import MyButton from "../../common/Button/MyButton";
 
 const ProfileDataForm = ({profile, isOwner, onSubmit,initVals}) => {
 
@@ -15,7 +16,7 @@ const ProfileDataForm = ({profile, isOwner, onSubmit,initVals}) => {
           }) => (
             <div>
                 <Form>
-                    <div><button type={'submit'}>save</button></div>
+                    <div><MyButton type={'submit'}>save</MyButton></div>
 
                     <div>
                         <b>Full name</b>: <Field type="text" name={'fullName'}/>
