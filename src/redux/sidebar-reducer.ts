@@ -1,4 +1,5 @@
 
+type InitialStateType = typeof initialState
 
 let initialState =  {
     friends: [
@@ -9,7 +10,7 @@ let initialState =  {
     ]
 }
 
-const sidebarReducer = (state = initialState, action) => {
+const sidebarReducer = (state = initialState, action: any): InitialStateType  => {
 
 
 

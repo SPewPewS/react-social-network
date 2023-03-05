@@ -3,8 +3,15 @@ import s from "./Paginator.module.css";
 import cn from "classnames";
 
 
+type Props = {
+    totalUsersCount: number,
+    pageSize: number,
+    currentPage: number,
+    onPageChanged: (pageNumber: number) => void,
+    portionSize?: number
+}
 
-let Paginator = (props, {portionSize = 10}) => {
+let Paginator: React.FC<Props> = (props, {portionSize = 10}) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -37,7 +44,7 @@ let Paginator = (props, {portionSize = 10}) => {
         {portionCount > portionNumber &&
             <button onClick={() => (setPortionNumber(portionNumber +1))}>Next</button>
         }
-
+vb
     </div>
 }
 

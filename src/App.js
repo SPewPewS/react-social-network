@@ -12,7 +12,6 @@ import FormTest from "./components/Test/FormTest/FormTest";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
 
@@ -49,7 +48,7 @@ class App extends React.Component {
                                     <Route path='/dialogs/*' element={<DialogsContainer store={this.props.store}/>}/>
                                     <Route path='/profile/:userId' element={<ProfileContainer/>}/>
                                     <Route path="/profile/" element={<ProfileContainer/>}/>
-                                    <Route path='/users' element={<UsersContainer/>}/>
+                                    <Route path='/users' element={<UsersContainer pageTitle={"рпрорпро"}/>}/>
                                     <Route path='/login' element={<Login/>}/>
                                     <Route path='/formTest' element={<FormTest/>}/>
                                     <Route path='*' element={<div>404 NOT FOUND</div>}/>
